@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+  organizr:
+    hostname: organizr
+    image: organizr/organizr
+    container_name: organizr
+    volumes:
+      - /mnt/docker/organizr:/config
+    ports:
+      - 80:80
+    environment:
+      - PGID=100
+      - PUID=1024
+      - TZ=Europe/Brussels
+

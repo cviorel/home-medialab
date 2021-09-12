@@ -1,0 +1,24 @@
+version: "3.3"
+
+services:
+  broker:
+    image: redis:6.0
+    restart: unless-stopped
+
+  paperless-ng:
+    image: ghcr.io/linuxserver/paperless-ng
+    container_name: paperless-ng
+    depends_on:
+      - broker
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - REDIS_URL=redis://broker:6379
+      - PAPERLESS_CONSUMER_POLLING=10
+    volumes:
+      - /mnt/docker/paperless-ng/config:/config
+      - /mnt/docker/paperless-ng/data:/data
+    ports:
+      - 8001:8000
+    restart: unless-stopped

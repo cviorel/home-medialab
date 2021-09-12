@@ -1,0 +1,16 @@
+---
+version: "2"
+services:
+  apprise-api:
+    image: linuxserver/apprise-api:version-v0.6.3
+    container_name: apprise-api
+    restart: unless-stopped
+    environment:
+      - TZ=${TZ} # Specify a timezone to use
+      - PUID=${PUID} # User ID to run as
+      - PGID=${PGID} # Group ID to run as
+    volumes:
+      - /mnt/docker/apprise:/config # Contains all relevant configuration files.
+    ports:
+      - 6001:8000/tcp # Web UI and API
+
