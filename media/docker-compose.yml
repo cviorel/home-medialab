@@ -185,8 +185,6 @@ services:
     image: mongo
     ports:
       - "27017:27017"
-    logging:
-      driver: "none"
     container_name: mongo-db
     volumes:
       - /mnt/docker/ytdl_material/db:/data/db
