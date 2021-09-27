@@ -28,4 +28,4 @@ services:
       driver: "json-file"
     container_name: mongo-db
     volumes:
-      - /mnt/docker/ytdl_material/db:/data/db
+      - ./db:/data/db
