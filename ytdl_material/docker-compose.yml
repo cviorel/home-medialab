@@ -18,8 +18,6 @@ services:
       - /mnt/docker/ytdl_material/users:/app/users
     ports:
       - "8998:17442"
-    logging:
-      driver: "json-file"
     image: tzahi12345/youtubedl-material:nightly
 
   ytdl-mongo-db:
