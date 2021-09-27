@@ -169,8 +169,8 @@ services:
       ytdl_mongodb_connection_string: 'mongodb://ytdl-mongo-db:27017'
       ytdl_use_local_db: 'false'
       write_ytdl_config: 'true'
-      UID: ${PUID}
-      GID: ${PGID}
+      #UID: ${PUID}
+      #GID: ${PGID}
     restart: unless-stopped
     volumes:
       - /mnt/docker/ytdl_material/appdata:/app/appdata
@@ -185,6 +185,8 @@ services:
     image: mongo
     ports:
       - "27017:27017"
+    logging:
+      driver: "json-file"
     container_name: mongo-db
     volumes:
       - ./db:/data/db
