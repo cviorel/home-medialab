@@ -29,3 +29,6 @@ services:
     container_name: mongo-db
     volumes:
       - ytdl-mongo-db:/data/db
+
+volumes:
+  ytdl-mongo-db:
