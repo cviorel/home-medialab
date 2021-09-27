@@ -187,4 +187,4 @@ services:
       - "27017:27017"
     container_name: mongo-db
     volumes:
-      - /mnt/docker/ytdl_material/db:/data/db
+      - ./db:/data/db
