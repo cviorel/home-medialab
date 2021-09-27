@@ -139,24 +139,6 @@ services:
     ports:
       - 5055:5055/tcp # Web UI
 
-  ytdl_material:
-    hostname: ytdl
-    container_name: ytdl_material
-    restart: always
-    volumes:
-      - /mnt/docker/ytdl_material/appdata:/app/appdata
-      - /mnt/docker/ytdl_material/audio:/app/audio
-      - /mnt/docker/ytdl_material/video:/app/video
-      - /mnt/docker/ytdl_material/subscriptions:/app/subscriptions
-      - /mnt/docker/ytdl_material/users:/app/users
-    ports:
-      - "8998:17442"
-    environment:
-      - UID=${PUID}
-      - GID=${PGID}
-      - ALLOW_CONFIG_MUTATIONS="true"
-    image: tzahi12345/youtubedl-material:latest
-
   pwndrop:
     image: ghcr.io/linuxserver/pwndrop
     container_name: pwndrop
@@ -180,3 +162,29 @@ services:
       - 8765:80
     environment:
       - OOKLA_EULA_GDPR=true
+
+  ytdl_material:
+    environment:
+      ALLOW_CONFIG_MUTATIONS: 'true'
+      ytdl_mongodb_connection_string: 'mongodb://ytdl-mongo-db:27017'
+      ytdl_use_local_db: 'false'
+      write_ytdl_config: 'true'
+    restart: unless-stopped
+    volumes:
+      - /mnt/docker/ytdl_material/appdata:/app/appdata
+      - /mnt/docker/ytdl_material/audio:/app/audio
+      - /mnt/docker/ytdl_material/video:/app/video
+      - /mnt/docker/ytdl_material/subscriptions:/app/subscriptions
+      - /mnt/docker/ytdl_material/users:/app/users
+    ports:
+      - "8998:17442"
+    image: tzahi12345/youtubedl-material:nightly
+  ytdl-mongo-db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    logging:
+      driver: "none"
+    container_name: mongo-db
+    volumes:
+      - /mnt/docker/ytdl_material/db:/data/db
