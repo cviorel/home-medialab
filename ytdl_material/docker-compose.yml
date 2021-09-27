@@ -28,7 +28,7 @@ services:
       driver: "json-file"
     container_name: mongo-db
     volumes:
-      - ytdl-mongo-db:/data/db
+      - mongo-db-data:/data/db
 
 volumes:
-  ytdl-mongo-db:
+  mongo-db-data:
