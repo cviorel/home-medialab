@@ -38,7 +38,7 @@ services:
 
   sabnzbd:
     hostname: sabnzbd
-    image: ghcr.io/linuxserver/sabnzbd
+    image: lscr.io/linuxserver/sabnzbd
     container_name: sabnzbd
     volumes:
       - /mnt/docker/sabnzbd:/config
@@ -67,7 +67,7 @@ services:
     restart: unless-stopped
 
   radarr:
-    image: ghcr.io/linuxserver/radarr
+    image: lscr.io/linuxserver/radarr
     container_name: radarr
     environment:
       - PUID=${PUID}
@@ -82,7 +82,7 @@ services:
     restart: unless-stopped
 
   bazarr:
-    image: ghcr.io/linuxserver/bazarr
+    image: lscr.io/linuxserver/bazarr
     container_name: bazarr
     environment:
       - PUID=${PUID}
@@ -97,7 +97,7 @@ services:
     restart: unless-stopped
 
   jackett:
-    image: ghcr.io/linuxserver/jackett
+    image: lscr.io/linuxserver/jackett
     container_name: jackett
     environment:
       - PUID=1024
