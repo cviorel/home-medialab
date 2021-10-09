@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   pyload:
-    image: ghcr.io/linuxserver/pyload
+    image: lscr.io/linuxserver/pyload
     container_name: pyload
     environment:
       - PUID=${PUID}

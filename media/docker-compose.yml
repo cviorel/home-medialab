@@ -1,22 +1,6 @@
 version: "3.3"
 
 services:
-  cloudflare-ddns:
-    image: oznu/cloudflare-ddns:latest
-    container_name: cloudflare-ddns
-    restart: always
-    environment:
-      - API_KEY=${CLOUDFLARE_API_KEY}
-      - ZONE=${CLOUDFLARE_ZONE}
-      - PROXIED=true
-
-  instantprivacy:
-    hostname: instantprivacy
-    image: linuxconfig/instantprivacy
-    container_name: instantprivacy
-    ports:
-      - 8118:8118
-
   transmission:
     hostname: transmission
     image: haugene/transmission-openvpn
@@ -127,7 +111,7 @@ services:
     restart: unless-stopped
 
   overseerr:
-    image: linuxserver/overseerr:version-v1.25.0
+    image: lscr.io/linuxserver/overseerr
     container_name: overseerr
     restart: unless-stopped
     environment:
@@ -138,27 +122,3 @@ services:
       - /mnt/docker/overseerr:/config
     ports:
       - 5055:5055/tcp # Web UI
-
-  pwndrop:
-    image: ghcr.io/linuxserver/pwndrop
-    container_name: pwndrop
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-    volumes:
-      - /mnt/docker/pwndrop:/config
-    ports:
-      - 8082:8080
-    restart: unless-stopped
-
-  speedtest:
-    hostname: speedtest
-    image: henrywhitaker3/speedtest-tracker
-    container_name: speedtest
-    volumes:
-      - /home/cviorel/speedtest-tracker:/config
-    ports:
-      - 8765:80
-    environment:
-      - OOKLA_EULA_GDPR=true

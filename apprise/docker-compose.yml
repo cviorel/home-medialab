@@ -2,7 +2,7 @@
 version: "2"
 services:
   apprise-api:
-    image: linuxserver/apprise-api:version-v0.6.3
+    image: lscr.io/linuxserver/apprise-api
     container_name: apprise-api
     restart: unless-stopped
     environment:
@@ -13,4 +13,3 @@ services:
       - /mnt/docker/apprise:/config # Contains all relevant configuration files.
     ports:
       - 6001:8000/tcp # Web UI and API
-
