@@ -11,7 +11,7 @@ services:
     depends_on:
       - broker
     environment:
-      - PUID=1024
+      - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
       - PAPERLESS_REDIS=redis://broker:6379
