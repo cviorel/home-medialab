@@ -14,7 +14,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - REDIS_URL=redis://broker:6379
+      - PAPERLESS_REDIS=redis://broker:6379
       - PAPERLESS_CONSUMER_POLLING=10
     volumes:
       - /mnt/docker/paperless-ng/config:/config
