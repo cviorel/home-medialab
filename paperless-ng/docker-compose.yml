@@ -71,8 +71,8 @@ services:
       USERMAP_UID: 1026
       USERMAP_GID: ${PGID}
       PAPERLESS_TIME_ZONE: ${TZ}
-      PAPERLESS_OCR_LANGUAGE: ron
-      PAPERLESS_OCR_LANGUAGES: fra ron
+      PAPERLESS_OCR_LANGUAGE: eng+fra
+      PAPERLESS_OCR_LANGUAGES: ron
       PAPERLESS_CONSUMER_POLLING: 300
 # Additional languages to install for text recognition, separated by a
 # whitespace. Note that this is
