@@ -68,7 +68,7 @@ services:
 # The UID and GID of the user used to run paperless in the container. Set this
 # to your UID and GID on the host so that you have write access to the
 # consumption directory.
-      USERMAP_UID: ${PUID}
+      USERMAP_UID: 1026
       USERMAP_GID: ${PGID}
       PAPERLESS_TIME_ZONE: ${TZ}
       PAPERLESS_OCR_LANGUAGE: fra
