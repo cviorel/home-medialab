@@ -72,6 +72,7 @@ services:
       USERMAP_GID: ${PGID}
       PAPERLESS_TIME_ZONE: ${TZ}
       PAPERLESS_OCR_LANGUAGE: fre
+      PAPERLESS_OCR_LANGUAGES: eng fre rum
 # Additional languages to install for text recognition, separated by a
 # whitespace. Note that this is
 # different from PAPERLESS_OCR_LANGUAGE (default=eng), which defines the
