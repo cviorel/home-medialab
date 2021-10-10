@@ -73,7 +73,7 @@ services:
       PAPERLESS_TIME_ZONE: ${TZ}
       PAPERLESS_OCR_LANGUAGE: fra
       PAPERLESS_OCR_LANGUAGES: eng fra
-      PAPERLESS_CONSUMER_POLLING: 10
+      PAPERLESS_CONSUMER_POLLING: 300
 # Additional languages to install for text recognition, separated by a
 # whitespace. Note that this is
 # different from PAPERLESS_OCR_LANGUAGE (default=eng), which defines the
