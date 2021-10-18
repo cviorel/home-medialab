@@ -91,5 +91,8 @@ services:
 # documents are written in.
       #PAPERLESS_OCR_LANGUAGE: eng
 
+# https://paperless-ng.readthedocs.io/en/latest/setup.html?highlight=username#install-paperless-from-docker-hub
+# docker-compose run --rm webserver createsuperuser
+
 volumes:
   pgdata:
