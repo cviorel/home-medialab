@@ -35,7 +35,6 @@ docker-compose -f ./organizr/docker-compose.yml up -d
 docker-compose -f ./media/docker-compose.yml up -d
 docker-compose -f ./portainer/docker-compose.yml up -d
 docker-compose -f ./pyLoad/docker-compose.yml up -d
-docker-compose -f ./changedetection.io/docker-compose.yml up -d
 docker-compose -f ./ytdl_material/docker-compose.yml up -d
 ```
 
@@ -54,7 +53,6 @@ docker-compose -f ./organizr/docker-compose.yml down
 docker-compose -f ./media/docker-compose.yml down
 docker-compose -f ./portainer/docker-compose.yml down
 docker-compose -f ./pyLoad/docker-compose.yml down
-docker-compose -f ./changedetection.io/docker-compose.yml down
 docker-compose -f ./ytdl_material/docker-compose.yml down
 ```
 
@@ -63,8 +61,6 @@ docker-compose -f ./ytdl_material/docker-compose.yml down
 ```yaml
 .
 ├── apprise
-│   └── docker-compose.yml
-├── changedetection.io
 │   └── docker-compose.yml
 ├── media
 │   └── docker-compose.yml
