@@ -32,6 +32,7 @@ docker-compose -f ./paperless-ng/docker-compose.yml up -d
 docker-compose -f ./wikijs/docker-compose.yml up -d
 docker-compose -f ./utils/docker-compose.yml up -d
 docker-compose -f ./organizr/docker-compose.yml up -d
+docker-compose -f ./trilium/docker-compose.yml up -d
 docker-compose -f ./media/docker-compose.yml up -d
 docker-compose -f ./portainer/docker-compose.yml up -d
 docker-compose -f ./pyLoad/docker-compose.yml up -d
@@ -50,6 +51,7 @@ docker-compose -f ./paperless-ng/docker-compose.yml down
 docker-compose -f ./wikijs/docker-compose.yml down
 docker-compose -f ./utils/docker-compose.yml down
 docker-compose -f ./organizr/docker-compose.yml down
+docker-compose -f ./trilium/docker-compose.yml down
 docker-compose -f ./media/docker-compose.yml down
 docker-compose -f ./portainer/docker-compose.yml down
 docker-compose -f ./pyLoad/docker-compose.yml down
