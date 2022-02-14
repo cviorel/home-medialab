@@ -60,8 +60,9 @@ services:
     volumes:
       - /mnt/docker/paperless-ng/config:/config
       - /mnt/docker/paperless-ng/data:/data
-      - /mnt/docker/paperless-ng/.export:/usr/src/paperless/export
-      - /mnt/docker/paperless-ng/.consume:/usr/src/paperless/consume
+      - /mnt/docker/paperless-ng/media:/usr/src/paperless/media
+      - /mnt/docker/paperless-ng/export:/usr/src/paperless/export
+      - /mnt/docker/paperless-ng/consume:/usr/src/paperless/consume
     environment:
       PAPERLESS_REDIS: redis://broker:6379
       PAPERLESS_DBHOST: db
