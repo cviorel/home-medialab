@@ -14,17 +14,19 @@ services:
       - 8091:8081
     restart: unless-stopped
 
-  # calibre-web:
-  #   image: lscr.io/linuxserver/calibre-web
-  #   container_name: calibre-web
-  #   environment:
-  #     - PUID=100
-  #     - PGID=1024
-  #     - TZ=Europe/Brussels
-  #     - DOCKER_MODS=linuxserver/calibre-web:calibre
-  #   volumes:
-  #     - /mnt/docker/calibre/config:/config
-  #     - /mnt/docker/calibre/library:/books
-  #   ports:
-  #     - 8092:8083
-  #   restart: unless-stopped
+  calibre-web:
+    image: lscr.io/linuxserver/calibre-web
+    container_name: calibre-web
+    depends_on:
+      - calibre
+    environment:
+      - PUID=100
+      - PGID=1024
+      - TZ=Europe/Brussels
+      - DOCKER_MODS=linuxserver/calibre-web:calibre
+    volumes:
+      - /mnt/docker/calibre/config:/config
+      - /mnt/docker/calibre/library:/books
+    ports:
+      - 8092:8083
+    restart: unless-stopped
