@@ -1,24 +1,24 @@
 version: "3.3"
 services:
-  calibre:
-    image: lscr.io/linuxserver/calibre
-    container_name: calibre
-    environment:
-      - PUID=100
-      - PGID=1024
-      - TZ=Europe/Brussels
-    volumes:
-      - /mnt/docker/calibre/config:/config
-    ports:
-      - 8090:8080
-      - 8091:8081
-    restart: unless-stopped
+  # calibre:
+  #   image: lscr.io/linuxserver/calibre
+  #   container_name: calibre
+  #   environment:
+  #     - PUID=100
+  #     - PGID=1024
+  #     - TZ=Europe/Brussels
+  #   volumes:
+  #     - /mnt/docker/calibre/config:/config
+  #   ports:
+  #     - 8090:8080
+  #     - 8091:8081
+  #   restart: unless-stopped
 
   calibre-web:
     image: lscr.io/linuxserver/calibre-web
     container_name: calibre-web
-    depends_on:
-      - calibre
+    # depends_on:
+    #   - calibre
     environment:
       - PUID=100
       - PGID=1024
