@@ -5,9 +5,10 @@ services:
     image: lscr.io/linuxserver/calibre-web
     container_name: calibre-web
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=100
+      - PGID=1024
       - TZ=Europe/Brussels
+      - DOCKER_MODS=linuxserver/calibre-web:calibre #optional
     volumes:
       - /mnt/docker/calibre/config:/config
       - /mnt/docker/calibre/library:/books
