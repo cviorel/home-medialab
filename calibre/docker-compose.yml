@@ -1,17 +1,30 @@
 version: "3.3"
-
 services:
-  calibre-web:
-    image: lscr.io/linuxserver/calibre-web
-    container_name: calibre-web
+  calibre:
+    image: lscr.io/linuxserver/calibre
+    container_name: calibre
     environment:
       - PUID=100
       - PGID=1024
       - TZ=Europe/Brussels
-      - DOCKER_MODS=linuxserver/calibre-web:calibre #optional
     volumes:
       - /mnt/docker/calibre/config:/config
-      - /mnt/docker/calibre/library:/books
     ports:
-      - 8083:8083
+      - 8090:8080
+      - 8091:8081
     restart: unless-stopped
+
+  # calibre-web:
+  #   image: lscr.io/linuxserver/calibre-web
+  #   container_name: calibre-web
+  #   environment:
+  #     - PUID=100
+  #     - PGID=1024
+  #     - TZ=Europe/Brussels
+  #     - DOCKER_MODS=linuxserver/calibre-web:calibre
+  #   volumes:
+  #     - /mnt/docker/calibre/config:/config
+  #     - /mnt/docker/calibre/library:/books
+  #   ports:
+  #     - 8092:8083
+  #   restart: unless-stopped
