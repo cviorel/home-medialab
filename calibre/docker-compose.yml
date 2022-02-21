@@ -9,6 +9,7 @@ services:
       - TZ=Europe/Brussels
     volumes:
       - /mnt/docker/calibre/config:/config
+      - /mnt/docker/calibre/books:/books
     ports:
       - 8090:8080
       - 8091:8081
