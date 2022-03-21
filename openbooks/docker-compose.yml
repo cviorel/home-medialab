@@ -3,8 +3,9 @@ version: "3.3"
 services:
   openbooks:
     image: evanbuss/openbooks
-    container_name: openbooks
+    container_name: OpenBooks
     restart: unless-stopped
+    command: --persist
     ports:
       - "8083:80"
     volumes:
