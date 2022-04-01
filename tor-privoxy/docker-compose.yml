@@ -1,0 +1,11 @@
+version: "3.3"
+
+services:
+  tor-privoxy:
+    hostname: tor-privoxy
+    image: cviorel/tor-privoxy
+    container_name: tor-privoxy
+    ports:
+      - 8118:8118
+      - 9050:9050
+    restart: unless-stopped
