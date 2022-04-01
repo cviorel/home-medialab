@@ -29,6 +29,7 @@ find . -type f -name docker-compose.yml | xargs -I {} echo "docker-compose -f {}
 # execute
 docker-compose -f ./apprise/docker-compose.yml up -d
 docker-compose -f ./paperless-ng/docker-compose.yml up -d
+docker-compose -f ./tor-privoxy/docker-compose.yml up -d
 docker-compose -f ./wikijs/docker-compose.yml up -d
 docker-compose -f ./openbooks/docker-compose.yml up -d
 docker-compose -f ./utils/docker-compose.yml up -d
@@ -50,6 +51,7 @@ find . -type f -name docker-compose.yml | xargs -I {} echo "docker-compose -f {}
 # execute
 docker-compose -f ./apprise/docker-compose.yml down
 docker-compose -f ./paperless-ng/docker-compose.yml down
+docker-compose -f ./tor-privoxy/docker-compose.yml down
 docker-compose -f ./wikijs/docker-compose.yml down
 docker-compose -f ./openbooks/docker-compose.yml down
 docker-compose -f ./utils/docker-compose.yml down
