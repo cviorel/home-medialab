@@ -39,8 +39,8 @@ docker-compose -f ./media/docker-compose.yml up -d
 docker-compose -f ./portainer/docker-compose.yml up -d
 docker-compose -f ./pyLoad/docker-compose.yml up -d
 docker-compose -f ./n8n/docker-compose.yml up -d
+docker-compose -f ./calibre-web/docker-compose.yml up -d
 docker-compose -f ./ytdl_material/docker-compose.yml up -d
-
 ```
 
 ## Bring the stack down #2
@@ -62,6 +62,6 @@ docker-compose -f ./media/docker-compose.yml down
 docker-compose -f ./portainer/docker-compose.yml down
 docker-compose -f ./pyLoad/docker-compose.yml down
 docker-compose -f ./n8n/docker-compose.yml down
+docker-compose -f ./calibre-web/docker-compose.yml down
 docker-compose -f ./ytdl_material/docker-compose.yml down
-
 ```
