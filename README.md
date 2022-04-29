@@ -28,6 +28,7 @@ find . -type f -name docker-compose.yml | xargs -I {} echo "docker-compose -f {}
 
 # execute
 docker-compose -f ./apprise/docker-compose.yml up -d
+docker-compose -f ./uptime-kuma/docker-compose.yml up -d
 docker-compose -f ./paperless-ng/docker-compose.yml up -d
 docker-compose -f ./tor-privoxy/docker-compose.yml up -d
 docker-compose -f ./wikijs/docker-compose.yml up -d
@@ -41,6 +42,7 @@ docker-compose -f ./pyLoad/docker-compose.yml up -d
 docker-compose -f ./n8n/docker-compose.yml up -d
 docker-compose -f ./calibre-web/docker-compose.yml up -d
 docker-compose -f ./ytdl_material/docker-compose.yml up -d
+
 ```
 
 ## Bring the stack down #2
@@ -51,6 +53,7 @@ find . -type f -name docker-compose.yml | xargs -I {} echo "docker-compose -f {}
 
 # execute
 docker-compose -f ./apprise/docker-compose.yml down
+docker-compose -f ./uptime-kuma/docker-compose.yml down
 docker-compose -f ./paperless-ng/docker-compose.yml down
 docker-compose -f ./tor-privoxy/docker-compose.yml down
 docker-compose -f ./wikijs/docker-compose.yml down
@@ -64,4 +67,5 @@ docker-compose -f ./pyLoad/docker-compose.yml down
 docker-compose -f ./n8n/docker-compose.yml down
 docker-compose -f ./calibre-web/docker-compose.yml down
 docker-compose -f ./ytdl_material/docker-compose.yml down
+
 ```

@@ -5,6 +5,7 @@ services:
     hostname: transmission
     image: haugene/transmission-openvpn
     container_name: transmission
+    restart: unless-stopped
     volumes:
       - /mnt/docker/transmission:/data
       - /mnt/downloads/transmission_incomplete:/downloads/incomplete
