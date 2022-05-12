@@ -53,7 +53,7 @@ services:
       - SABNZBD_GID=${PGID}
 
   sonarr:
-    image: ghcr.io/linuxserver/sonarr
+    image: lscr.io/linuxserver/sonarr
     container_name: sonarr
     environment:
       - PUID=${PUID}

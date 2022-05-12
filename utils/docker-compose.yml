@@ -11,7 +11,7 @@ services:
       - PROXIED=true
 
   pwndrop:
-    image: ghcr.io/linuxserver/pwndrop
+    image: lscr.io/linuxserver/pwndrop
     container_name: pwndrop
     environment:
       - PUID=${PUID}
