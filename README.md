@@ -32,6 +32,7 @@ docker-compose -f ./uptime-kuma/docker-compose.yml up -d
 docker-compose -f ./paperless-ng/docker-compose.yml up -d
 docker-compose -f ./tor-privoxy/docker-compose.yml up -d
 docker-compose -f ./wikijs/docker-compose.yml up -d
+docker-compose -f ./ubooquity/docker-compose.yml up -d
 docker-compose -f ./openbooks/docker-compose.yml up -d
 docker-compose -f ./utils/docker-compose.yml up -d
 docker-compose -f ./organizr/docker-compose.yml up -d
@@ -57,6 +58,7 @@ docker-compose -f ./uptime-kuma/docker-compose.yml down
 docker-compose -f ./paperless-ng/docker-compose.yml down
 docker-compose -f ./tor-privoxy/docker-compose.yml down
 docker-compose -f ./wikijs/docker-compose.yml down
+docker-compose -f ./ubooquity/docker-compose.yml down
 docker-compose -f ./openbooks/docker-compose.yml down
 docker-compose -f ./utils/docker-compose.yml down
 docker-compose -f ./organizr/docker-compose.yml down

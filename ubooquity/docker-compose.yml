@@ -1,0 +1,21 @@
+version: "3.3"
+
+services:
+  ubooquity:
+    image: lscr.io/linuxserver/ubooquity:latest
+    container_name: ubooquity
+    environment:
+      - PUID=1024
+      - PGID=100
+      - TZ=Europe/Brussels
+      - MAXMEM=512
+    volumes:
+      - /mnt/docker/ubooquity/data:/config
+      - /mnt/docker/ubooquity/books:/books
+      - /mnt/docker/ubooquity/comics:/comics
+      - /mnt/docker/ubooquity/raw:/files
+    ports:
+      - 2202:2202
+      - 2203:2203
+    restart: unless-stopped
+
